@@ -14,5 +14,3 @@ mongodb:
     username: "admin"
     password: "password1"
     database: "default"
-  persistence:
-    size: 8Gi
