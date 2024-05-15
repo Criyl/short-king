@@ -14,7 +14,5 @@ mongodb:
     username: "admin"
     password: "password1"
     database: "default"
- arbiter:
-    enabled: false
   persistence:
     size: 8Gi
