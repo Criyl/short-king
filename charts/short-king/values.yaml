@@ -4,6 +4,7 @@ mongodb:
   enabled: true
   persistence:
     size: 8Gi
+  initdbScriptsConfigMap: mongo-init
   auth:
     enabled: true
     username: "admin"
