@@ -12,6 +12,6 @@ FROM base AS runner
 WORKDIR /opt/app
 
 COPY --from=poetry-install /root/.local /usr/local
-COPY server/ public/ /
+COPY . .
 
 CMD ["fastapi","run","server"]
