@@ -37,6 +37,6 @@ spec:
             - containerPort: 8000
           env:
           - name: MONGO_URI
-            value: mongodb+srv://{{ .Values.mongodb.auth.username }}:{{ .Values.mongodb.auth.password }}@mongdb.short.svc.cluster.local/?retryWrites=true
+            value: mongodb+srv://{{ .Values.mongodb.auth.username }}:{{ .Values.mongodb.auth.password }}@shortking-mongodb.short.svc.cluster.local/?retryWrites=true
           - name: MONGO_DATABASE
-            value: default
+            value: {{ .Values.mongodb.auth.database }}
