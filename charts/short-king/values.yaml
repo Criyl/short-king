@@ -3,7 +3,7 @@ mongodb:
     imageRegistry: docker.io
   enabled: true
   persistence:
-    size: 8Gi
+    enabled: true
   initdbScriptsConfigMap: mongo-init
   auth:
     enabled: true
