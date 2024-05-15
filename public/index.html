@@ -1,0 +1,69 @@
+<html>
+
+</html>
+
+<head>
+    <title>Short King</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="filename" content="word_template.html" />
+    <link rel="stylesheet" href="public/skeleton.css" />
+    <link rel="stylesheet" href="public/style.css" />
+</head>
+
+<body>
+    <backdrop id="backdrop"> </backdrop>
+    <h1 id="shorty">Short King</h1>
+    <h1 id="primary">
+        <form id="req_form" action="/create" method="post" onsubmit="sendData()">
+            <p>Enter URL</p>
+            <input type="url" id="url" name="url" value="http://yesterdle.carroll.codes">
+        </form>
+        <div class="tooltip">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            <word id="copyable" onclick="copyFunction()" onmouseout="outFunc()"></word>
+        </div>
+    </h1>
+</body>
+
+<script>
+    const form = document.querySelector("#req_form");
+
+    async function sendData() {
+        const formData = new FormData(form);
+
+        try {
+            fetch("/create", {
+                method: "POST",
+                body: formData,
+            }).then((response) => {
+                return response.json()
+            }).then((response) => {
+                var copyText = document.getElementById("copyable");
+                copyText.innerText = "short.carroll.codes/" + response.id
+            })
+
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        sendData();
+    });
+
+    function copyFunction() {
+        var copyText = document.getElementById("copyable");
+        navigator.clipboard.writeText(copyText.innerText);
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied!";
+    }
+
+    function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
+    }
+
+</script>

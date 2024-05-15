@@ -1,0 +1,10 @@
+mongodb:
+  enabled: true
+  persistence:
+    enabled: true
+  auth:
+    enabled: true
+    username: "admin"
+    rootPassword: "password1"
+    password: "password1"
+    database: "default"

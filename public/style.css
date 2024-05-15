@@ -1,0 +1,164 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica Neue Bolder", sans-serif;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    background-color: #121213;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+#primary {
+    color: #85c0f9;
+    top: 45%;
+}
+
+h1#primary word {
+    color: #ffffff;
+    text-shadow: 0 0 10px #85c0f9;
+    font-style: Bolder;
+    font-size: larger;
+}
+
+#shorty {
+    color: white;
+    text-shadow: 0 0 10px #85c0f9;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 150px;
+}
+
+#url {
+    width: 30%;
+    text-align: center;
+}
+
+backdrop {
+    font-family: "Helvetica Neue", "Helvetica Neue Bolder", sans-serif;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(backdrop.jpg);
+    background-repeat: repeat;
+    z-index: -1;
+    opacity: 0.01;
+}
+
+#badge {
+    text-align: right;
+    position: fixed;
+    bottom: 0.5%;
+    right: 3%;
+}
+
+header {
+    font-family: "Helvetica Neue", "Helvetica Neue Bolder", sans-serif;
+    font-style: Bolder;
+    font-size: x-large;
+
+    color: rgb(124, 124, 124);
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    height: 50%;
+
+    z-index: 10;
+}
+
+header a {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+@media only screen and (max-width: 730px) {
+    header a {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+}
+
+footer {
+    color: rgb(124, 124, 124);
+    font-style: Bolder;
+    font-size: x-large;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+
+    z-index: 10;
+}
+
+a:link {
+    text-decoration: none;
+    color: rgb(226, 226, 226);
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(226, 226, 226);
+}
+
+a {
+    transition: all 0.4s ease 0s;
+}
+
+a:hover {
+    letter-spacing: 5px;
+    color: #83e07b !important;
+    text-shadow: 0 0 25px #83e07b !important;
+    transition: all 0.4s ease 0s;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    font-size: medium;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 240px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -120px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
