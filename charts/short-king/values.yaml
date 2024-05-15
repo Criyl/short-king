@@ -2,11 +2,6 @@ mongodb:
   global:
     imageRegistry: docker.io
   enabled: true
-  architecture: replicaset
-  replicaSetName: rs0
-  replicaCount: 3
-  readinessProbe:
-    initialDelaySeconds: 20
   persistence:
     size: 8Gi
   auth:
