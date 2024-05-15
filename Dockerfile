@@ -9,7 +9,9 @@ RUN poetry export --with dev --without-hashes --format=requirements.txt > requir
 RUN python3 -m pip install --user --ignore-installed -r requirements.txt
 
 FROM base AS runner
+WORKDIR /opt/app
+
 COPY --from=poetry-install /root/.local /usr/local
-COPY server public ./
+COPY . .
 
 CMD ["fastapi","run","server"]

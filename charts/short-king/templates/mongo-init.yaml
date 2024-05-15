@@ -1,0 +1,9 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mongo-init
+data:
+  init.js: |
+    dbportal = db.getSiblingDB("default");
+    dbadmin = db.getSiblingDB("admin");
+    dbadmin.grantRolesToUser("default", [{ role: "clusterMonitor", db:"default"}, { role: "readWrite", db: "default" }])    
