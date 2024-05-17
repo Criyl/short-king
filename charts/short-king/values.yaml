@@ -4,7 +4,6 @@ mongodb:
   enabled: true
   persistence:
     enabled: true
-  initdbScriptsConfigMap: mongo-init
   auth:
     enabled: true
     username: "admin"
