@@ -21,7 +21,7 @@ def create(url: Annotated[str, Form()]) -> UrlLookup:
 
 @app.get("/{short_url}")
 def redirect(short_url: str ) -> str:
-    redirect_url = url_repository.find_one_by({"id": ObjectId(short_url)})
+    redirect_url = url_repository.find_one_by({"salt": short_url})
     print(redirect_url)
     return RedirectResponse(redirect_url.url)
 

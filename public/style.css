@@ -25,6 +25,7 @@ h1#primary word {
     text-shadow: 0 0 10px #85c0f9;
     font-style: Bolder;
     font-size: larger;
+    user-select: auto; 
 }
 
 #shorty {
@@ -145,6 +146,7 @@ a:hover {
     margin-left: -120px;
     opacity: 0;
     transition: opacity 0.3s;
+    user-select: none; 
 }
 
 .tooltip .tooltiptext::after {
