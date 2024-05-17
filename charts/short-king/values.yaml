@@ -1,10 +1,7 @@
 mongodb:
-  global:
-    imageRegistry: docker.io
   enabled: true
   persistence:
-    enabled: true
-  initdbScriptsConfigMap: mongo-init
+    enabled: false
   auth:
     enabled: true
     username: "admin"
