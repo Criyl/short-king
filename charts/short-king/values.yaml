@@ -1,7 +1,7 @@
 mongodb:
   enabled: true
   persistence:
-    enabled: false
+    enabled: true
   auth:
     enabled: true
     username: "admin"
