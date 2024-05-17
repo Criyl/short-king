@@ -8,7 +8,7 @@ from random import choice
 class UrlLookup(BaseModel):
     id: Optional[PydanticObjectId] = None
     timestamp: float = time()
-    salt: str = ''.join( choice(string.ascii_letters+string.digits)  for _ in range(10)) 
+    salt: str = ''.join( choice(string.ascii_letters+string.digits)  for _ in range(5)) 
     url: str
 
 class URLRepository(AbstractRepository[UrlLookup]):
