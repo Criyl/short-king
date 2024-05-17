@@ -37,6 +37,6 @@ spec:
             - containerPort: 8000
           env:
           - name: MONGO_URI
-            value: mongodb+srv://{{ .Values.mongodb.auth.username }}:{{ .Values.mongodb.auth.password }}@{{ .Values.mongodb.host_url }}/?retryWrites=true
+            value: mongodb+srv://{{ .Values.mongodb.auth.username }}:{{ .Values.mongodb.auth.password }}@{{ .Release.Name }}-mongodb.short.svc.cluster.local/{{ .Values.mongodb.auth.database }}?retryWrites=true
           - name: MONGO_DATABASE
             value: {{ .Values.mongodb.auth.database }}

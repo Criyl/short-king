@@ -13,3 +13,18 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/mnt/short"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: short-king-mongodb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  selector:
+    matchLabels:
+      app: shortking
+  volumeMode: Filesystem

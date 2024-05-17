@@ -1,6 +1,4 @@
 mongodb:
-  global:
-    imageRegistry: docker.io
   enabled: true
   persistence:
     enabled: true
@@ -9,4 +7,3 @@ mongodb:
     username: "admin"
     password: "changeme"
     database: "default"
-  host_url: "shortking-mongodb.short.svc.cluster.local"

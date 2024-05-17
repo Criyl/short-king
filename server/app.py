@@ -2,8 +2,7 @@ from fastapi import FastAPI, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse,FileResponse
 from pydantic import BaseModel
-from server.models import UrlLookup
-from server.mongo import url_repository
+from server.models import UrlLookup, generate_url, url_repository
 from bson import ObjectId
 from typing import Annotated
 
@@ -14,9 +13,9 @@ app.mount("/public", StaticFiles(directory="public"),name="public")
 def create(url: Annotated[str, Form()]) -> UrlLookup:
     existing = url_repository.find_one_by({"url": url})
     if existing is None:
-        url_item = UrlLookup(url=url)
-        url_repository.save(url_item)
-        return url_item
+        generated = generate_url(url)
+        return generated
+        
     return existing
 
 @app.get("/{short_url}")
