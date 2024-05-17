@@ -2,3 +2,8 @@ mongodb:
   enabled: true
   persistence:
     enabled: false
+  auth:
+    enabled: true
+    username: "admin"
+    password: "changeme"
+    database: "default"
