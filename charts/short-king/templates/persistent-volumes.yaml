@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: short-king-mongodb
+  name: data-short-mongodb-0
 spec:
   accessModes:
     - ReadWriteOnce

@@ -2,6 +2,7 @@ mongodb:
   enabled: true
   persistence:
     enabled: true
+    existingClaim: data-short-mongodb-0
   auth:
     enabled: true
     username: "admin"
