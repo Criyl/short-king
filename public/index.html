@@ -40,7 +40,7 @@
                 return response.json()
             }).then((response) => {
                 var copyText = document.getElementById("copyable");
-                copyText.innerText = "short.carroll.codes/" + response.salt
+                copyText.innerText = "https://short.carroll.codes/" + response.salt
             })
 
         } catch (e) {
