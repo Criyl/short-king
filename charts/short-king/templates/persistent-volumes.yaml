@@ -6,7 +6,7 @@ metadata:
     app: shortking
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: local-path
   capacity:
     storage: 10Gi
   accessModes:
@@ -24,7 +24,5 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  selector:
-    matchLabels:
-      app: shortking
   volumeMode: Filesystem
+  volumeName: short-king-vol
