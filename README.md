@@ -1,9 +1,6 @@
 # Short King
-<a href="short.carroll.codes">
-
 ![Screenshot](docs/screenshot.png)
 
-</a>
 
 ### 
 
