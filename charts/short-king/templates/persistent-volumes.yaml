@@ -1,20 +1,4 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: short-king-vol
-  labels:
-    app: shortking
-    type: local
-spec:
-  storageClassName: local-path
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "/mnt/short"
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: data-short-mongodb-0
